@@ -2,7 +2,7 @@
 Matlab functions designed for topological data analysis of ginkgo leaf image data
 
 ## Overview
-This repo contains a bunch of matlab functions we wrote for topological data analysis of ginkgo leaves. All the matlab functions we wrote can be found in folder "my_functions_matlab". Several basic demos which uses these functions are also provided:
+This repo contains a bunch of matlab functions we wrote for topological data analysis of ginkgo leaves. All the matlab functions we wrote can be found in folder "my_functions_matlab". In folder "leaf_images", we provided several example images you can play with using our code. Several basic demos which uses these functions are also provided as follows.
 
 ### Ginkgo leaf barcode computation
 In "ginkgo_leaf_barcode.m" we show how to process an image of ginkgo leaf and produce its (0-th) persistence barcode.
