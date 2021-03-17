@@ -29,10 +29,10 @@ for ii=1:nfiles
 
     image = imread(currentfilename);
     BW = leaf_segment(image, Scale);
-    [BW1,ind] = find_ind(BW, window);
+    [BW_without_petiole, ind] = find_ind(BW, window);
     C = leaf_contour(BW);
-    C1 = leaf_contour(BW1);
-    leaf(ii).StemLength = 0.5*(curve_len(C)-curve_len(C1));
+    C1 = leaf_contour(BW_without_petiole);
+    leaf(ii).PetioleLength = 0.5*(curve_len(C)-curve_len(C1));
 
     [eps,I] = min(sum(abs(C1-[ind(2);ind(1)])));
     leaf(ii).Contour = [C1(:,I:end) C1(:,2:I)]-C1(:,I);
