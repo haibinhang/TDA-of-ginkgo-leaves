@@ -22,19 +22,19 @@ level = graythresh(I);      % Get the threshold value to segment image
 BW = imbinarize(I, level);  % Get a binary image from image segmentation
 BW = im2double(BW);
 
-%% Find joint point between leaf and stem
+%% Find joint point between leaf and petiole
 
 window = 64*Scale;
-[BW_without_stem, ind] = find_ind(BW, window);
+[BW_without_petiole, ind] = find_ind(BW, window);
 
-%% Find the contour/boundary of leaf and compute length of stem
+%% Find the contour/boundary of leaf and compute length of petiole
 
 figure;
 subplot(1,2,1)
 C = leaf_contour(BW);
 subplot(1,2,2)
-C1 = leaf_contour(BW_without_stem);
-StemLength = 0.5*(curve_len(C)-curve_len(C1));
+C1 = leaf_contour(BW_without_petiole);
+PetioleLength = 0.5*(curve_len(C)-curve_len(C1));
 
 %% Reparamitrize the contour curve
 [eps, start_index] = min(sum(abs(C1-[ind(2);ind(1)])));
